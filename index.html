@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Country Information</title>
+  <meta name="description" content="Search any country and view its flag, capital, population, region, state, and currency — built with HTML, CSS, and JavaScript." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+
+  <main class="app">
+    <!-- Header -->
+    <div class="head">
+      <div class="head__title">
+        <div class="head__icon" aria-hidden="true">🌍</div>
+        <div>
+          <h1>Country Information</h1>
+          <p>Search any country to explore its details</p>
+        </div>
+      </div>
+
+      <!-- Theme toggle -->
+      <button class="theme-toggle" id="themeToggle" type="button" role="switch" aria-checked="false" aria-label="Toggle light and dark theme" title="Toggle light / dark theme">
+        <span class="theme-toggle__knob" id="themeKnob" aria-hidden="true">
+          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4.2" />
+            <path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8" />
+          </svg>
+        </span>
+      </button>
+    </div>
+
+    <!-- Search -->
+    <div class="search">
+      <div class="search__wrap">
+        <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" />
+          <path d="M21 21l-4.3-4.3" />
+        </svg>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search a country… e.g. Japan"
+          autocomplete="off"
+          aria-label="Search a country"
+          aria-autocomplete="list"
+          aria-controls="suggestions"
+        />
+        <ul class="suggestions" id="suggestions" role="listbox" aria-label="Country suggestions"></ul>
+      </div>
+      <button class="search__btn" id="searchBtn" type="button">Search</button>
+    </div>
+
+    <!-- Quick chips -->
+    <div class="chips" id="chips" aria-label="Popular countries"></div>
+
+    <!-- Result -->
+    <div class="result" id="result" aria-live="polite"></div>
+
+    <p class="note">Data source: REST Countries dataset · Flags via flagcdn.com</p>
+  </main>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
